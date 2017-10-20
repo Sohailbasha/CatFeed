@@ -12,11 +12,14 @@ class CategoryCardController {
     
     static let shared = CategoryCardController()
     
-    var categoryCards: [CategoryCard] = []
+    var categoryCards: [Category] = []
 
     init() {
-        let categoryEntertainment = CategoryCard(category: .general, art: #imageLiteral(resourceName: "entertainment"))
-        categoryCards = [categoryEntertainment]
+        let cardEverything = Category(category: .general, art: #imageLiteral(resourceName: "everything"))
+        let cardBusiness = Category(category: .business, art: #imageLiteral(resourceName: "business"))
+        let cardPolitics = Category(category: .politics, art: #imageLiteral(resourceName: "politics"))
+        let cardNerdStuff = Category(category: .technology, art: #imageLiteral(resourceName: "tech"))
+        categoryCards = [cardEverything, cardBusiness, cardPolitics, cardNerdStuff]
     }
     
     

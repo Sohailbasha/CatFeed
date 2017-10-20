@@ -9,17 +9,17 @@
 import Foundation
 import UIKit
 
-class CategoryCard {
-    let category: Category
+class Category {
+    let category: CategoryType
     let art: UIImage
     
-    init(category: Category, art: UIImage) {
+    init(category: CategoryType, art: UIImage) {
         self.category = category
         self.art = art
     }
 }
 
-enum Category: String {
+enum CategoryType: String {
     case general = "general"
     case technology = "technology"
     case gaming = "gaming"
