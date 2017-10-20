@@ -66,17 +66,49 @@
 			children = (
 				FDCA8DDD1F993802000C684F /* AppDelegate.swift */,
 				FDCA8DE11F993802000C684F /* Main.storyboard */,
-				FDCA8DF51F996CE5000C684F /* Article.swift */,
-				FDCA8DFB1F99811B000C684F /* CategoryCard.swift */,
-				FDCA8DEF1F99383C000C684F /* CategoryViewController.swift */,
-				FDCA8DF91F997582000C684F /* ArticleController.swift */,
-				FDCA8DF11F9952EE000C684F /* CategoryCollectionViewCell.swift */,
+				FDCA8DFD1F998222000C684F /* Model */,
+				FDCA8DFE1F998234000C684F /* Model Controller */,
+				FDCA8E001F99823F000C684F /* View Controller */,
+				FDCA8DFF1F99823B000C684F /* View */,
 				FDCA8DF71F99754B000C684F /* NetworkController.swift */,
 				FDCA8DE41F993802000C684F /* Assets.xcassets */,
 				FDCA8DE61F993802000C684F /* LaunchScreen.storyboard */,
 				FDCA8DE91F993802000C684F /* Info.plist */,
 			);
 			path = Newsly;
+			sourceTree = "<group>";
+		};
+		FDCA8DFD1F998222000C684F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FDCA8DF51F996CE5000C684F /* Article.swift */,
+				FDCA8DFB1F99811B000C684F /* CategoryCard.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FDCA8DFE1F998234000C684F /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FDCA8DF91F997582000C684F /* ArticleController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		FDCA8DFF1F99823B000C684F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FDCA8DF11F9952EE000C684F /* CategoryCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FDCA8E001F99823F000C684F /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FDCA8DEF1F99383C000C684F /* CategoryViewController.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
