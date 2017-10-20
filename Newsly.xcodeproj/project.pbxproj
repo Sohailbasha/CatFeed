@@ -16,6 +16,7 @@
 		FDCA8DF61F996CE5000C684F /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA8DF51F996CE5000C684F /* Article.swift */; };
 		FDCA8DF81F99754B000C684F /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA8DF71F99754B000C684F /* NetworkController.swift */; };
 		FDCA8DFA1F997582000C684F /* ArticleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA8DF91F997582000C684F /* ArticleController.swift */; };
+		FDCA8DFC1F99811B000C684F /* CategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA8DFB1F99811B000C684F /* CategoryCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		FDCA8DF51F996CE5000C684F /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		FDCA8DF71F99754B000C684F /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		FDCA8DF91F997582000C684F /* ArticleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleController.swift; sourceTree = "<group>"; };
+		FDCA8DFB1F99811B000C684F /* CategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				FDCA8DDD1F993802000C684F /* AppDelegate.swift */,
 				FDCA8DE11F993802000C684F /* Main.storyboard */,
 				FDCA8DF51F996CE5000C684F /* Article.swift */,
+				FDCA8DFB1F99811B000C684F /* CategoryCard.swift */,
 				FDCA8DEF1F99383C000C684F /* CategoryViewController.swift */,
 				FDCA8DF91F997582000C684F /* ArticleController.swift */,
 				FDCA8DF11F9952EE000C684F /* CategoryCollectionViewCell.swift */,
@@ -152,6 +155,7 @@
 				FDCA8DF81F99754B000C684F /* NetworkController.swift in Sources */,
 				FDCA8DF01F99383C000C684F /* CategoryViewController.swift in Sources */,
 				FDCA8DF21F9952EE000C684F /* CategoryCollectionViewCell.swift in Sources */,
+				FDCA8DFC1F99811B000C684F /* CategoryCard.swift in Sources */,
 				FDCA8DDE1F993802000C684F /* AppDelegate.swift in Sources */,
 				FDCA8DF61F996CE5000C684F /* Article.swift in Sources */,
 			);

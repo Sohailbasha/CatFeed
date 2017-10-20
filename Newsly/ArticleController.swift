@@ -9,16 +9,7 @@
 import Foundation
 
 class ArticleController {
-    
-    enum Category: String {
-        case general = "general"
-        case technology = "technology"
-        case gaming = "gaming"
-        case politics = "politics"
-        case business = "business"
-        case science = "science-and-nature"
-        case sports = "sport"
-    }
+
     
     static let shared = ArticleController()
     
@@ -26,8 +17,6 @@ class ArticleController {
     let baseURL = URL(string: "http://beta.newsapi.org/v2/top-headlines")
     private let language = "en"
     
-    // change type to Enum
-    var category: String?
     
     
     func fetchArticlesFor(category: Category, completion: @escaping ([Article]?) -> Void?) {

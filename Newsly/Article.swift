@@ -15,7 +15,6 @@ struct Article {
     private let imageURLKey = "urlToImage"
     private let toURLKey = "url"
     
-//    let sourceName: String
     let title: String
     let imageURL: String
     let toURL: String
