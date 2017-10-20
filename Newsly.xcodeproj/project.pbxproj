@@ -17,7 +17,8 @@
 		FDCA8DF81F99754B000C684F /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA8DF71F99754B000C684F /* NetworkController.swift */; };
 		FDCA8DFA1F997582000C684F /* ArticleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA8DF91F997582000C684F /* ArticleController.swift */; };
 		FDCA8DFC1F99811B000C684F /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA8DFB1F99811B000C684F /* Category.swift */; };
-		FDCA8E021F998365000C684F /* CategoryCardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA8E011F998365000C684F /* CategoryCardController.swift */; };
+		FDCA8E021F998365000C684F /* CategoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA8E011F998365000C684F /* CategoryController.swift */; };
+		FDE80EAE1F9A735F0062038E /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE80EAD1F9A735F0062038E /* ListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +34,8 @@
 		FDCA8DF71F99754B000C684F /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		FDCA8DF91F997582000C684F /* ArticleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleController.swift; sourceTree = "<group>"; };
 		FDCA8DFB1F99811B000C684F /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
-		FDCA8E011F998365000C684F /* CategoryCardController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCardController.swift; sourceTree = "<group>"; };
+		FDCA8E011F998365000C684F /* CategoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryController.swift; sourceTree = "<group>"; };
+		FDE80EAD1F9A735F0062038E /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				FDCA8DF91F997582000C684F /* ArticleController.swift */,
-				FDCA8E011F998365000C684F /* CategoryCardController.swift */,
+				FDCA8E011F998365000C684F /* CategoryController.swift */,
 			);
 			path = "Model Controller";
 			sourceTree = "<group>";
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				FDCA8DEF1F99383C000C684F /* CategoryViewController.swift */,
+				FDE80EAD1F9A735F0062038E /* ListViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -189,8 +192,9 @@
 				FDCA8DFA1F997582000C684F /* ArticleController.swift in Sources */,
 				FDCA8DF81F99754B000C684F /* NetworkController.swift in Sources */,
 				FDCA8DF01F99383C000C684F /* CategoryViewController.swift in Sources */,
-				FDCA8E021F998365000C684F /* CategoryCardController.swift in Sources */,
+				FDCA8E021F998365000C684F /* CategoryController.swift in Sources */,
 				FDCA8DF21F9952EE000C684F /* CategoryCollectionViewCell.swift in Sources */,
+				FDE80EAE1F9A735F0062038E /* ListViewController.swift in Sources */,
 				FDCA8DFC1F99811B000C684F /* Category.swift in Sources */,
 				FDCA8DDE1F993802000C684F /* AppDelegate.swift in Sources */,
 				FDCA8DF61F996CE5000C684F /* Article.swift in Sources */,

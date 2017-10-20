@@ -8,9 +8,9 @@
 
 import Foundation
 
-class CategoryCardController {
+class CategoryController {
     
-    static let shared = CategoryCardController()
+    static let shared = CategoryController()
     
     var categoryCards: [Category] = []
 

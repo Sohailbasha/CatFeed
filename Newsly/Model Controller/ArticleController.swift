@@ -19,7 +19,7 @@ class ArticleController {
     
     
     
-    func fetchArticlesFor(category: CategoryType, completion: @escaping ([Article]?) -> Void?) {
+    func fetchArticlesFor(category: CategoryType, completion: @escaping ([Article]?) -> Void) {
         guard let url = baseURL else { return }
         let urlParameters = ["apiKey":apiKey, "language":language, "category":category.rawValue]
         

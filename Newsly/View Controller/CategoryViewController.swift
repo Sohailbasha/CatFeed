@@ -19,29 +19,56 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func setupViews() {
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        let bannerImageView = UIImageView(image: #imageLiteral(resourceName: "banner"))
+        bannerImageView.contentMode = .scaleAspectFit
+        navigationItem.titleView = bannerImageView
+        
+        let widthConstraint = bannerImageView.widthAnchor.constraint(equalToConstant: view.frame.width)
+        let heightConstraint = bannerImageView.heightAnchor.constraint(equalToConstant: 70)
+        widthConstraint.isActive = true
+        heightConstraint.isActive = true
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return CategoryCardController.shared.categoryCards.count
+        return CategoryController.shared.categoryCards.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as? CategoryCollectionViewCell
 
-        cell?.category = CategoryCardController.shared.categoryCards[indexPath.row]
+        cell?.category = CategoryController.shared.categoryCards[indexPath.row]
         return cell ?? UICollectionViewCell()
     }
     
-    /*
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: "showArticles", sender: self)
+//    }
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showArticles" {
+            if let destinationVC = segue.destination as? ListViewController {
+                if let cell = sender as? CategoryCollectionViewCell {
+                    if let indexPath = collectionView.indexPath(for: cell) {
+                        let id = CategoryController.shared.categoryCards[indexPath.row].category
+                        destinationVC.categoryID = id.rawValue
+                    }
+                }
+            }
+        }
     }
-    */
+    
+
+    
 
 }
+
+
+
+
+
+
+
 
 
