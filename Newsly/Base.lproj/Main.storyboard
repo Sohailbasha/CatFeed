@@ -37,6 +37,10 @@
                                         </view>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="5id-P2-s42" id="WvB-lT-GL3"/>
+                                    <outlet property="delegate" destination="5id-P2-s42" id="OKR-WH-bD5"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,6 +52,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kg9-Vu-ZAE"/>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="63J-NP-is6" id="O60-3H-3wf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Avk-t6-uUH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,17 +8,20 @@
 
 import UIKit
 
-class CategoryViewController: UIViewController {
+class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
         
     }
 
-
+    @IBOutlet var collectionView: UICollectionView!
     
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return CategoryCardController.shared
+    }
 
     /*
     // MARK: - Navigation
@@ -31,3 +34,5 @@ class CategoryViewController: UIViewController {
     */
 
 }
+
+
