@@ -52,7 +52,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
                 if let cell = sender as? CategoryCollectionViewCell {
                     if let indexPath = collectionView.indexPath(for: cell) {
                         let id = CategoryController.shared.categoryCards[indexPath.row].category
-                        destinationVC.categoryID = id.rawValue
+                        destinationVC.setupDetailView(with: id)
                     }
                 }
             }
