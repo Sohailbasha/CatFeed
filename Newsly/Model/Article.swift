@@ -34,9 +34,7 @@ struct Article {
         var image = UIImage()
         NetworkController.imageForURL(string: self.imageURL) { (fetchedImage) in
             if let fetchedImage = fetchedImage {
-                DispatchQueue.main.async {
-                    image = fetchedImage
-                }
+                image = fetchedImage
             }
         }
         return image

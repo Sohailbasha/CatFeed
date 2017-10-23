@@ -22,7 +22,7 @@ protocol ArticleDisplayList {
 }
 
 class ListViewController: UIViewController, ArticleDisplayList {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
@@ -57,7 +57,7 @@ class ListViewController: UIViewController, ArticleDisplayList {
     
     
     // Mark: - Properties
-   
+    
     var categoryID: String?
     
     var articles: [Article] = []
@@ -98,8 +98,8 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return footerView ?? UICollectionReusableView()
     }
     
-   /*
-     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+    /*
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let numberOfArticles = articles.count
         guard let activityIndicatorFooter = self.footerView else {
             return
@@ -111,9 +111,14 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         
         if (indexPath.row == numberOfArticles - 1 && numberOfArticles >= batchSize && indexPath.row < numberOfArticlesPerScreenLimit) {
             
+            activityIndicatorFooter.activityIndicator.startAnimating()
+        } else {
+            activityIndicatorFooter.activityIndicator.stopAnimating()
         }
+        
     }
-     */
+    */
+    
 }
 
 
