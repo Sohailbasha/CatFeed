@@ -10,6 +10,11 @@ import UIKit
 
 class ArticleCollectionViewCell: UICollectionViewCell {
     
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        articleImageView.layer.cornerRadius = 10
+        articleImageView.clipsToBounds = true
+    }
     override func prepareForReuse() {
         super.prepareForReuse()
         self.articleImageView.image = nil
