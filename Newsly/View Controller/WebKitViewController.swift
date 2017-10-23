@@ -9,27 +9,26 @@
 import UIKit
 import WebKit
 
-class WebKitViewController: UIViewController {
+class WebKitViewController: UIViewController, WKUIDelegate {
+    
+    var webView: WKWebView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let preferences = WKPreferences()
-        preferences.javaScriptEnabled = true
-        
-        let configuration = WKWebViewConfiguration()
-        configuration.preferences = preferences
         
     }
     
     func loadWebView(url: String) {
-        if let url = URL(string: url) {
+        let configuration = WKWebViewConfiguration()
+        webView = WKWebView(frame: .zero, configuration: configuration)
+        webView.uiDelegate = self
+        view = webView
+        
+        if let url = URL(string: url), isViewLoaded {
             let urlRequest = URLRequest(url: url)
             webView.load(urlRequest)
         }
     }
-
-    
-    @IBOutlet var webView: WKWebView!
     
 }

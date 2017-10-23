@@ -58,9 +58,20 @@ class ListViewController: UIViewController, ArticleDisplayList {
                 self.footerView?.activityIndicator.stopAnimating()
             }
         }
-    
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toWebView" {
+            if let cell = sender as? ArticleCollectionViewCell {
+                if let indexPath = collectionView.indexPath(for: cell) {
+                    if let destinationVC = segue.destination as? WebKitViewController {
+                        let articleURL = articles[indexPath.row].toURL
+                        destinationVC.loadWebView(url: articleURL)
+                    }
+                }
+            }
+        }
+    }
     
     
     // Mark: - Properties
@@ -106,6 +117,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return footerView ?? UICollectionReusableView()
     }
     
+    
     /*
      func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
      let numberOfArticles = articles.count
@@ -126,6 +138,8 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
      
      }
      */
+    
+    
     
 }
 

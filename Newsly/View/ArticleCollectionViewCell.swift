@@ -12,8 +12,9 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
-        articleImageView.layer.cornerRadius = 10
+        articleImageView.layer.cornerRadius = 15
         articleImageView.clipsToBounds = true
+
     }
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -38,3 +39,14 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
