@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Article {
     
@@ -28,5 +29,15 @@ struct Article {
         self.imageURL = imageURL
         self.toURL = toURL
     }
+    
+    lazy var photo: UIImage = {
+        var image = UIImage()
+        NetworkController.imageForURL(string: self.imageURL) { (fetchedImage) in
+            if let fetchedImage = fetchedImage {
+                image = fetchedImage
+            }
+        }
+        return image
+    }()
 }
 

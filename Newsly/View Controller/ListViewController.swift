@@ -8,7 +8,20 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
+class LoadingFooterView: UICollectionReusableView {
+    static let reuseID = "LoadingFooterView"
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+}
+
+
+protocol ArticleDisplayList {
+    var articles: [Article] { get set }
+    var offset: Int { get set }
+    var batchSize: Int { get }
+    
+}
+
+class ListViewController: UIViewController, ArticleDisplayList {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +37,24 @@ class ListViewController: UIViewController {
             if let fetchedArticles = articles {
                 self.articles = fetchedArticles
             }
+            
             DispatchQueue.main.async {
+                self.images = self.fetchImagesFrom(articles: self.articles)
                 self.collectionView.reloadData()
             }
         }
+    }
+    
+    func fetchImagesFrom(articles: [Article]) -> [UIImage] {
+        var images: [UIImage] = []
+        for article in articles {
+            NetworkController.imageForURL(string: article.imageURL, completion: { (image) in
+                if let image = image {
+                    images.append(image)
+                }
+            })
+        }
+        return images
     }
     
     
@@ -35,7 +62,15 @@ class ListViewController: UIViewController {
    
     var categoryID: String?
     var articles: [Article] = []
+    var offset: Int = 0
+    var batchSize: Int = 12
     
+    
+    //
+    var images: [UIImage] = []
+    //
+    
+    var footerView: LoadingFooterView?
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -52,6 +87,14 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         print(articles[indexPath.row].title)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: LoadingFooterView.reuseID, for: indexPath) as? LoadingFooterView
+        footerView?.activityIndicator.startAnimating()
+        footerView?.activityIndicator.hidesWhenStopped = true
+        self.footerView = footerView
+        return footerView ?? UICollectionReusableView()
+    }
 }
 
 
@@ -65,10 +108,11 @@ extension ListViewController: UICollectionViewDataSourcePrefetching {
 }
 
 
+
+
 extension UICollectionViewDataSource {
     
 }
-
 
 
 

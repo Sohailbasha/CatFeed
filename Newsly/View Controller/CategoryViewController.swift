@@ -35,14 +35,11 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "categoryCell", for: indexPath) as? CategoryCollectionViewCell
-
         cell?.category = CategoryController.shared.categoryCards[indexPath.row]
         return cell ?? UICollectionViewCell()
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        performSegue(withIdentifier: "showArticles", sender: self)
-//    }
+
     
     // MARK: - Navigation
 

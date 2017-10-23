@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD6D672A1F9E3AA900144A92 /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D67291F9E3AA900144A92 /* ArticleCollectionViewCell.swift */; };
 		FDCA8DDE1F993802000C684F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA8DDD1F993802000C684F /* AppDelegate.swift */; };
 		FDCA8DE31F993802000C684F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDCA8DE11F993802000C684F /* Main.storyboard */; };
 		FDCA8DE51F993802000C684F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDCA8DE41F993802000C684F /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FD6D67291F9E3AA900144A92 /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
 		FDCA8DDA1F993802000C684F /* Newsly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Newsly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDCA8DDD1F993802000C684F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDCA8DE21F993802000C684F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				FDCA8DF11F9952EE000C684F /* CategoryCollectionViewCell.swift */,
+				FD6D67291F9E3AA900144A92 /* ArticleCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				FDCA8DF21F9952EE000C684F /* CategoryCollectionViewCell.swift in Sources */,
 				FDE80EAE1F9A735F0062038E /* ListViewController.swift in Sources */,
 				FDCA8DFC1F99811B000C684F /* Category.swift in Sources */,
+				FD6D672A1F9E3AA900144A92 /* ArticleCollectionViewCell.swift in Sources */,
 				FDCA8DDE1F993802000C684F /* AppDelegate.swift in Sources */,
 				FDCA8DF61F996CE5000C684F /* Article.swift in Sources */,
 			);
