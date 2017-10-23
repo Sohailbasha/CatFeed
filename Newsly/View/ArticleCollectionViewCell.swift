@@ -10,7 +10,26 @@ import UIKit
 
 class ArticleCollectionViewCell: UICollectionViewCell {
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.articleImageView.image = nil
+    }
+    
     @IBOutlet var articleImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     
+
+    private func displayCellWith(article: Article?) {
+        if let article = article {
+            backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
+            self.titleLabel.text = article.title
+            articleImageView.alpha = 1
+            titleLabel.alpha = 1
+            
+        } else {
+            backgroundColor = #colorLiteral(red: 0.8967322335, green: 0.8967322335, blue: 0.8967322335, alpha: 1)
+            titleLabel.alpha = 0
+            articleImageView.alpha = 0
+        }
+    }
 }

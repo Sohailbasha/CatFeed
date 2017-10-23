@@ -30,14 +30,6 @@ struct Article {
         self.toURL = toURL
     }
     
-    lazy var photo: UIImage = {
-        var image = UIImage()
-        NetworkController.imageForURL(string: self.imageURL) { (fetchedImage) in
-            if let fetchedImage = fetchedImage {
-                image = fetchedImage
-            }
-        }
-        return image
-    }()
+
 }
 

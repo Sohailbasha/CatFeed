@@ -28,11 +28,15 @@ class ListViewController: UIViewController, ArticleDisplayList {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.prefetchDataSource = self
+        footerView?.activityIndicator.startAnimating()
+    
     }
     
     // Functions
     
     func setupDetailView(with id: CategoryType) {
+        
+        /*
         ArticleController.shared.fetchArticlesFor(category: id) { (articles) -> Void in
             if let fetchedArticles = articles {
                 self.articles = fetchedArticles
@@ -41,19 +45,22 @@ class ListViewController: UIViewController, ArticleDisplayList {
                 self.collectionView.reloadData()
             }
         }
+        */
+        
+        ArticleController.shared.fetchFrom(category: id) { (articles, images) in
+            if let articles = articles, let images = images {
+                self.articles = articles
+                self.images = images
+            }
+            
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+                self.footerView?.activityIndicator.stopAnimating()
+            }
+        }
+    
     }
     
-    func fetchImagesFrom(articles: [Article]) -> [UIImage] {
-        var images: [UIImage] = []
-        for article in articles {
-            NetworkController.imageForURL(string: article.imageURL, completion: { (image) in
-                if let image = image {
-                    images.append(image)
-                }
-            })
-        }
-        return images
-    }
     
     
     // Mark: - Properties
@@ -83,10 +90,11 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleCell", for: indexPath) as? ArticleCollectionViewCell
-        var article = articles[indexPath.row]
+        let article = articles[indexPath.row]
+        
+        cell?.articleImageView.image = images[indexPath.row]
         cell?.titleLabel.text = article.title
         
-        cell?.articleImageView.image = article.photo
         return cell ?? UICollectionViewCell()
     }
     
@@ -99,25 +107,25 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     /*
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let numberOfArticles = articles.count
-        guard let activityIndicatorFooter = self.footerView else {
-            return
-        }
-        
-        if activityIndicatorFooter.activityIndicator.isAnimating {
-            return
-        }
-        
-        if (indexPath.row == numberOfArticles - 1 && numberOfArticles >= batchSize && indexPath.row < numberOfArticlesPerScreenLimit) {
-            
-            activityIndicatorFooter.activityIndicator.startAnimating()
-        } else {
-            activityIndicatorFooter.activityIndicator.stopAnimating()
-        }
-        
-    }
-    */
+     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+     let numberOfArticles = articles.count
+     guard let activityIndicatorFooter = self.footerView else {
+     return
+     }
+     
+     if activityIndicatorFooter.activityIndicator.isAnimating {
+     return
+     }
+     
+     if (indexPath.row == numberOfArticles - 1 && numberOfArticles >= batchSize && indexPath.row < numberOfArticlesPerScreenLimit) {
+     
+     activityIndicatorFooter.activityIndicator.startAnimating()
+     } else {
+     activityIndicatorFooter.activityIndicator.stopAnimating()
+     }
+     
+     }
+     */
     
 }
 
@@ -125,9 +133,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension ListViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            print(indexPath)
-        }
+        print(indexPaths)
     }
 }
 
