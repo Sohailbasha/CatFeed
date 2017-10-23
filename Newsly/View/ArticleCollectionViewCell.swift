@@ -10,4 +10,7 @@ import UIKit
 
 class ArticleCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet var articleImageView: UIImageView!
+    @IBOutlet var titleLabel: UILabel!
+    
 }

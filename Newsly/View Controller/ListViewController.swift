@@ -37,9 +37,7 @@ class ListViewController: UIViewController, ArticleDisplayList {
             if let fetchedArticles = articles {
                 self.articles = fetchedArticles
             }
-            
             DispatchQueue.main.async {
-                self.images = self.fetchImagesFrom(articles: self.articles)
                 self.collectionView.reloadData()
             }
         }
@@ -61,10 +59,11 @@ class ListViewController: UIViewController, ArticleDisplayList {
     // Mark: - Properties
    
     var categoryID: String?
+    
     var articles: [Article] = []
     var offset: Int = 0
     var batchSize: Int = 12
-    
+    var numberOfArticlesPerScreenLimit = 1000
     
     //
     var images: [UIImage] = []
@@ -83,9 +82,12 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleCell", for: indexPath)
-        print(articles[indexPath.row].title)
-        return cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleCell", for: indexPath) as? ArticleCollectionViewCell
+        var article = articles[indexPath.row]
+        cell?.titleLabel.text = article.title
+        
+        cell?.articleImageView.image = article.photo
+        return cell ?? UICollectionViewCell()
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -95,6 +97,23 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         self.footerView = footerView
         return footerView ?? UICollectionReusableView()
     }
+    
+   /*
+     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let numberOfArticles = articles.count
+        guard let activityIndicatorFooter = self.footerView else {
+            return
+        }
+        
+        if activityIndicatorFooter.activityIndicator.isAnimating {
+            return
+        }
+        
+        if (indexPath.row == numberOfArticles - 1 && numberOfArticles >= batchSize && indexPath.row < numberOfArticlesPerScreenLimit) {
+            
+        }
+    }
+     */
 }
 
 
