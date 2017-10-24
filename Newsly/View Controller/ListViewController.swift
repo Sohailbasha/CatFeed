@@ -109,7 +109,8 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let article = articles[indexPath.row]
         
 //        cell?.articleImageView.image = images[indexPath.row]
-        cell?.articleImageView.imageFromServerURL(urlString: article.imageURL)
+//        cell?.articleImageView.imageFromServerURL(urlString: article.imageURL)
+        cell?.articleImageView.downloadedFrom(link: article.imageURL, contentMode: .scaleAspectFill)
         cell?.titleLabel.text = article.title
         
         return cell ?? UICollectionViewCell()

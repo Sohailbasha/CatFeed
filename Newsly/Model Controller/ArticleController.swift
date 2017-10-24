@@ -19,7 +19,6 @@ class ArticleController {
     private let language = "en"
     
     
-    
     func fetchArticlesFor(category: CategoryType, completion: @escaping ([Article]?) -> Void) {
         guard let url = baseURL else { return }
         let urlParameters = ["apiKey":apiKey, "language":language, "category":category.rawValue]
@@ -48,7 +47,7 @@ class ArticleController {
         }
     }
     
-    
+    /*
     func fetchFrom(category: CategoryType, completion: @escaping ([Article]?, [UIImage]?) -> Void) {
         guard let url = baseURL else { return }
         let urlParameters = ["apiKey":apiKey, "language":language, "category":category.rawValue]
@@ -86,6 +85,7 @@ class ArticleController {
                                             completion(articles, images)
         }
     }
+    */
 }
 
 

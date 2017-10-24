@@ -63,6 +63,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		FD6D67321F9EC53E00144A92 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FD6D67301F9EC48100144A92 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FDCA8DD11F993802000C684F = {
 			isa = PBXGroup;
 			children = (
@@ -89,7 +97,7 @@
 				FDCA8E001F99823F000C684F /* View Controller */,
 				FDCA8DFF1F99823B000C684F /* View */,
 				FD6D672F1F9EBC3F00144A92 /* Network */,
-				FD6D67301F9EC48100144A92 /* Extensions.swift */,
+				FD6D67321F9EC53E00144A92 /* Extensions */,
 				FDCA8DE41F993802000C684F /* Assets.xcassets */,
 				FDCA8DE61F993802000C684F /* LaunchScreen.storyboard */,
 				FDCA8DE91F993802000C684F /* Info.plist */,
