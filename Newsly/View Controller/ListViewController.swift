@@ -66,7 +66,9 @@ class ListViewController: UIViewController, ArticleDisplayList {
                 if let indexPath = collectionView.indexPath(for: cell) {
                     if let destinationVC = segue.destination as? WebKitViewController {
                         let articleURL = articles[indexPath.row].toURL
-                        destinationVC.loadWebView(url: articleURL)
+                        DispatchQueue.main.async {
+                            destinationVC.loadWebView(url: articleURL)
+                        }
                     }
                 }
             }
@@ -80,7 +82,7 @@ class ListViewController: UIViewController, ArticleDisplayList {
     
     var articles: [Article] = []
     var offset: Int = 0
-    var batchSize: Int = 12
+    var batchSize: Int = 6
     var numberOfArticlesPerScreenLimit = 1000
     
     //

@@ -55,6 +55,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD6D672F1F9EBC3F00144A92 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FDCA8DF71F99754B000C684F /* NetworkController.swift */,
+				FD6D672D1F9E91B800144A92 /* ImageController.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		FDCA8DD11F993802000C684F = {
 			isa = PBXGroup;
 			children = (
@@ -80,8 +89,7 @@
 				FDCA8DFE1F998234000C684F /* Model Controller */,
 				FDCA8E001F99823F000C684F /* View Controller */,
 				FDCA8DFF1F99823B000C684F /* View */,
-				FDCA8DF71F99754B000C684F /* NetworkController.swift */,
-				FD6D672D1F9E91B800144A92 /* ImageController.swift */,
+				FD6D672F1F9EBC3F00144A92 /* Network */,
 				FDCA8DE41F993802000C684F /* Assets.xcassets */,
 				FDCA8DE61F993802000C684F /* LaunchScreen.storyboard */,
 				FDCA8DE91F993802000C684F /* Info.plist */,

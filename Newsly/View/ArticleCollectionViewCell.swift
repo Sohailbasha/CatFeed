@@ -21,6 +21,8 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         self.articleImageView.image = nil
     }
     
+    
+    
     @IBOutlet var articleImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     
@@ -33,7 +35,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
             titleLabel.alpha = 1
             
         } else {
-            backgroundColor = #colorLiteral(red: 0.8967322335, green: 0.8967322335, blue: 0.8967322335, alpha: 1)
+            backgroundColor = #colorLiteral(red: 0.8549019694, green: 0.250980407, blue: 0.4784313738, alpha: 1)
             titleLabel.alpha = 0
             articleImageView.alpha = 0
         }

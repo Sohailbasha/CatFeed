@@ -15,11 +15,11 @@ class ImageController {
         guard let url = URL(string: url) else { fatalError("Image URL optional is nil.") }
         
         NetworkController.performRequest(for: url, httpMethod: .get) { (data, error) in
-            guard let data = data, let image = UIImage(data: data) else { DispatchQueue.main.async { completion(nil) }
+            guard let data = data, let image = UIImage(data: data) else {
+                DispatchQueue.main.async { completion(nil) }
                 return
             }
             DispatchQueue.main.async { completion(image) }
-            
         }
     }
 }

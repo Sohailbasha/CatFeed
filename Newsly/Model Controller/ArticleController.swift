@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class ArticleController {
-
+    
     
     static let shared = ArticleController()
     
@@ -82,7 +82,6 @@ class ArticleController {
                                                     }
                                                 })
                                             }
-                                            
                                             
                                             completion(articles, images)
         }
