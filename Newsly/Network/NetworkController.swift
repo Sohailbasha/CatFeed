@@ -63,10 +63,28 @@ class NetworkController {
             completion(imageFromData)
         }
     }
-    
-    
-    
 }
+
+
+extension UIImageView {
+    func imageFromServerURL(urlString: String) {
+        guard let url = URL(string: urlString) else { return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            if let data = data {
+                DispatchQueue.main.async {
+                    guard let image = UIImage(data: data) else { return }
+                    self.image = image
+                }
+            }
+        }.resume()
+    }
+}
+
 
 
 

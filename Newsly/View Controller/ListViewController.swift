@@ -36,17 +36,19 @@ class ListViewController: UIViewController, ArticleDisplayList {
     
     func setupDetailView(with id: CategoryType) {
         
-        /*
+        
         ArticleController.shared.fetchArticlesFor(category: id) { (articles) -> Void in
             if let fetchedArticles = articles {
                 self.articles = fetchedArticles
             }
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
+                self.footerView?.activityIndicator.stopAnimating()
             }
         }
-        */
+ 
         
+        /*
         ArticleController.shared.fetchFrom(category: id) { (articles, images) in
             if let articles = articles, let images = images {
                 self.articles = articles
@@ -58,6 +60,7 @@ class ListViewController: UIViewController, ArticleDisplayList {
                 self.footerView?.activityIndicator.stopAnimating()
             }
         }
+        */
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -105,7 +108,8 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleCell", for: indexPath) as? ArticleCollectionViewCell
         let article = articles[indexPath.row]
         
-        cell?.articleImageView.image = images[indexPath.row]
+//        cell?.articleImageView.image = images[indexPath.row]
+        cell?.articleImageView.imageFromServerURL(urlString: article.imageURL)
         cell?.titleLabel.text = article.title
         
         return cell ?? UICollectionViewCell()
@@ -149,7 +153,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension ListViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        print(indexPaths)
+        
     }
 }
 
