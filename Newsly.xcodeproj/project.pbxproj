@@ -10,6 +10,7 @@
 		FD6D672A1F9E3AA900144A92 /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D67291F9E3AA900144A92 /* ArticleCollectionViewCell.swift */; };
 		FD6D672C1F9E6C1A00144A92 /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D672B1F9E6C1A00144A92 /* WebKitViewController.swift */; };
 		FD6D67311F9EC48100144A92 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D67301F9EC48100144A92 /* Extensions.swift */; };
+		FD8032391F9FD07100C3EDE1 /* CustomLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8032381F9FD07100C3EDE1 /* CustomLayout.swift */; };
 		FDCA8DDE1F993802000C684F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA8DDD1F993802000C684F /* AppDelegate.swift */; };
 		FDCA8DE31F993802000C684F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDCA8DE11F993802000C684F /* Main.storyboard */; };
 		FDCA8DE51F993802000C684F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDCA8DE41F993802000C684F /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		FD6D67291F9E3AA900144A92 /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
 		FD6D672B1F9E6C1A00144A92 /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
 		FD6D67301F9EC48100144A92 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		FD8032381F9FD07100C3EDE1 /* CustomLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLayout.swift; sourceTree = "<group>"; };
 		FDCA8DDA1F993802000C684F /* Newsly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Newsly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDCA8DDD1F993802000C684F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDCA8DE21F993802000C684F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				FDCA8DE41F993802000C684F /* Assets.xcassets */,
 				FDCA8DE61F993802000C684F /* LaunchScreen.storyboard */,
 				FDCA8DE91F993802000C684F /* Info.plist */,
+				FD8032381F9FD07100C3EDE1 /* CustomLayout.swift */,
 			);
 			path = Newsly;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 				FDCA8DFC1F99811B000C684F /* Category.swift in Sources */,
 				FD6D672A1F9E3AA900144A92 /* ArticleCollectionViewCell.swift in Sources */,
 				FDCA8DDE1F993802000C684F /* AppDelegate.swift in Sources */,
+				FD8032391F9FD07100C3EDE1 /* CustomLayout.swift in Sources */,
 				FDCA8DF61F996CE5000C684F /* Article.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

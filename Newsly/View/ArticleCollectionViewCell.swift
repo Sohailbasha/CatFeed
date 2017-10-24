@@ -11,11 +11,7 @@ import CoreMotion
 
 class ArticleCollectionViewCell: UICollectionViewCell {
     
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        self.layer.cornerRadius = 14
-    }
-    
+
     override func prepareForReuse() {
         super.prepareForReuse()
         self.articleImageView.image = nil
@@ -23,10 +19,10 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.layer.cornerRadius = 14
+        self.articleImageView.contentMode = .scaleAspectFit
     }
     
-    
-    private let motionManager = CMMotionManager()
     
     
     @IBOutlet var articleImageView: UIImageView!
@@ -48,10 +44,8 @@ class ArticleCollectionViewCell: UICollectionViewCell {
             articleImageView.alpha = 0
         }
     }
-    
 }
 
-extension ArticleCollectionViewCell: CardViewDelegate {}
 
 
 

@@ -128,8 +128,6 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
     
 }
 
-
-
 extension ListViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         
@@ -140,9 +138,22 @@ extension ListViewController: UICollectionViewDataSourcePrefetching {
 
 
 extension ListViewController: UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: view.frame.width - 10, height: 436)
-//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return CGSize(width: collectionView.bounds.width - 75, height: 400)
+        } else {
+            // TO DO iPAD
+            return CGSize()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(20, 0, 20, 0)
+    }
+    
+    
+    
 }
 
 
