@@ -35,8 +35,6 @@ class ListViewController: UIViewController, ArticleDisplayList {
     // Functions
     
     func setupDetailView(with id: CategoryType) {
-        
-        
         ArticleController.shared.fetchArticlesFor(category: id) { (articles) -> Void in
             if let fetchedArticles = articles {
                 self.articles = fetchedArticles
@@ -46,21 +44,6 @@ class ListViewController: UIViewController, ArticleDisplayList {
                 self.footerView?.activityIndicator.stopAnimating()
             }
         }
- 
-        
-        /*
-        ArticleController.shared.fetchFrom(category: id) { (articles, images) in
-            if let articles = articles, let images = images {
-                self.articles = articles
-                self.images = images
-            }
-            
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-                self.footerView?.activityIndicator.stopAnimating()
-            }
-        }
-        */
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -88,10 +71,7 @@ class ListViewController: UIViewController, ArticleDisplayList {
     var batchSize: Int = 6
     var numberOfArticlesPerScreenLimit = 1000
     
-    //
-    var images: [UIImage] = []
-    //
-    
+ 
     var footerView: LoadingFooterView?
     
     @IBOutlet var collectionView: UICollectionView!
@@ -107,9 +87,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleCell", for: indexPath) as? ArticleCollectionViewCell
         let article = articles[indexPath.row]
-        
-//        cell?.articleImageView.image = images[indexPath.row]
-//        cell?.articleImageView.imageFromServerURL(urlString: article.imageURL)
+
         cell?.articleImageView.downloadedFrom(link: article.imageURL, contentMode: .scaleAspectFill)
         cell?.titleLabel.text = article.title
         
@@ -161,8 +139,10 @@ extension ListViewController: UICollectionViewDataSourcePrefetching {
 
 
 
-extension UICollectionViewDataSource {
-    
+extension ListViewController: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: view.frame.width - 10, height: 436)
+//    }
 }
 
 

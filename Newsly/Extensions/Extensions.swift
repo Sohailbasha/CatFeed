@@ -30,29 +30,26 @@ extension UIImageView {
         guard let url = URL(string: link) else { return }
         downloadedFrom(url: url, contentMode: mode)
     }
-    
-    
-    
-    
-    
-    /*
-     func imageFromServerURL(urlString: String) {
-     guard let url = URL(string: urlString) else { return }
-     URLSession.shared.dataTask(with: url) { (data, response, error) in
-     if let error = error {
-     print(error)
-     return
-     }
-     
-     if let data = data {
-     DispatchQueue.main.async {
-     guard let image = UIImage(data: data) else { return }
-     self.image = image
-     }
-     }
-     }.resume()
-     }
-     */
 }
+
+
+protocol CardViewDelegate { }
+extension CardViewDelegate where Self: UIView {
+    
+    // Cards shadow
+    func cardify() {
+        self.layer.cornerRadius = 14
+        let color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOffset = CGSize(width: 0.0, height: 2.0)
+        self.layer.shadowRadius = 3
+        self.layer.shadowOpacity = 0.25
+        self.layer.masksToBounds = false
+        self.layer.rasterizationScale = UIScreen.main.scale
+    }
+    
+}
+
+
 
 
