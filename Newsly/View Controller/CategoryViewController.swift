@@ -20,7 +20,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     func setupViews() {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         let bannerImageView = UIImageView(image: #imageLiteral(resourceName: "banner"))
-        bannerImageView.contentMode = .scaleAspectFit
+        bannerImageView.contentMode = .scaleAspectFill
         navigationItem.titleView = bannerImageView
         
         let widthConstraint = bannerImageView.widthAnchor.constraint(equalToConstant: view.frame.width)

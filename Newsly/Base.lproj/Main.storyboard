@@ -102,14 +102,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n4Q-om-XJb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="315" height="285"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="315" id="u7y-R2-gBn"/>
-                                                        <constraint firstAttribute="height" constant="285" id="uuZ-wc-zjn"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="0.0" y="0.0" width="315" height="370"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="186-ys-Pd7">
-                                                    <rect key="frame" x="0.0" y="283" width="315" height="63"/>
+                                                    <rect key="frame" x="0.0" y="207" width="315" height="63"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                                     <nil key="textColor"/>
@@ -118,14 +114,13 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="n4Q-om-XJb" firstAttribute="leading" secondItem="sqh-7x-CDU" secondAttribute="leading" id="41F-Ru-GT4"/>
-                                            <constraint firstAttribute="trailing" secondItem="n4Q-om-XJb" secondAttribute="trailing" id="5vM-sq-Myu"/>
-                                            <constraint firstItem="n4Q-om-XJb" firstAttribute="top" secondItem="sqh-7x-CDU" secondAttribute="top" id="X1V-pQ-z1v"/>
+                                            <constraint firstAttribute="bottom" secondItem="n4Q-om-XJb" secondAttribute="bottom" id="1hH-n3-Cr0"/>
+                                            <constraint firstItem="n4Q-om-XJb" firstAttribute="top" secondItem="sqh-7x-CDU" secondAttribute="top" id="34h-VV-m86"/>
+                                            <constraint firstAttribute="trailing" secondItem="n4Q-om-XJb" secondAttribute="trailing" id="6c0-I4-ZkM"/>
+                                            <constraint firstItem="n4Q-om-XJb" firstAttribute="leading" secondItem="sqh-7x-CDU" secondAttribute="leading" id="7oZ-2r-O5h"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="articleImageView" destination="n4Q-om-XJb" id="eCU-2o-2FL"/>
-                                            <outlet property="imageViewHeightConstraint" destination="uuZ-wc-zjn" id="5zd-iN-OKG"/>
-                                            <outlet property="imageViewWidthConstraint" destination="u7y-R2-gBn" id="OY6-jH-cS0"/>
                                             <outlet property="titleLabel" destination="186-ys-Pd7" id="IgE-6h-Qtx"/>
                                             <segue destination="lEa-pD-dyc" kind="show" identifier="toWebView" id="XnA-xd-Cuy"/>
                                         </connections>

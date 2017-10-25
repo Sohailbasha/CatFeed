@@ -10,10 +10,6 @@ import UIKit
 import CoreMotion
 
 class ArticleCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet var imageViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet var imageViewWidthConstraint: NSLayoutConstraint!
-    
 
     override func prepareForReuse() {
         super.prepareForReuse()
@@ -27,10 +23,10 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         self.articleImageView.contentMode = .scaleAspectFill
         self.articleImageView.layer.cornerRadius = 14
         self.articleImageView.clipsToBounds = true
-        setupImageSize()
+
     }
     
-    
+    /*
     func setupImageSize() {
         if let image = articleImageView.image {
             let widthRatio = articleImageView.bounds.size.width / image.size.width
@@ -44,7 +40,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
             }
         }
     }
-    
+    */
     
     
     
