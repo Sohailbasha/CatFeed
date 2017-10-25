@@ -29,7 +29,6 @@ class ListViewController: UIViewController, ArticleDisplayList {
         collectionView.dataSource = self
         collectionView.prefetchDataSource = self
         footerView?.activityIndicator.startAnimating()
-    
     }
     
     // Functions
@@ -67,6 +66,7 @@ class ListViewController: UIViewController, ArticleDisplayList {
     var categoryID: String?
     
     var articles: [Article] = []
+    
     var offset: Int = 0
     var batchSize: Int = 6
     var numberOfArticlesPerScreenLimit = 1000
@@ -90,6 +90,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
         cell?.articleImageView.downloadedFrom(link: article.imageURL)
         cell?.titleLabel.text = article.title
+        cell?.sourceLabel.text = article.source
         
         return cell ?? UICollectionViewCell()
     }
