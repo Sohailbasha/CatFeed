@@ -21,7 +21,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // add things that you see on the screen
         self.articleImageView.contentMode = .scaleAspectFill
-        self.articleImageView.layer.cornerRadius = 14
+        self.articleImageView.layer.cornerRadius = 15
         self.articleImageView.clipsToBounds = true
 
     }
@@ -46,6 +46,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var articleImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var sourceLabel: UILabel!
     
     
     private func displayCellWith(article: Article?) {

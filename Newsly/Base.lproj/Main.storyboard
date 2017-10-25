@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Category View Controller-->
+        <!--Select A Catagory-->
         <scene sceneID="aRm-j1-ydd">
             <objects>
                 <viewController id="5id-P2-s42" customClass="CategoryViewController" customModule="Newsly" customModuleProvider="target" sceneMemberID="viewController">
@@ -68,7 +68,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kg9-Vu-ZAE"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="N9b-RT-CDQ"/>
+                    <navigationItem key="navigationItem" title="Select A Catagory" largeTitleDisplayMode="always" id="N9b-RT-CDQ"/>
                     <connections>
                         <outlet property="collectionView" destination="63J-NP-is6" id="O60-3H-3wf"/>
                     </connections>
@@ -172,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NWS-q5-Nu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1541.5999999999999" y="108.39580209895054"/>
+            <point key="canvasLocation" x="1542" y="117"/>
         </scene>
         <!--Web Kit View Controller-->
         <scene sceneID="BmE-pe-3LS">
@@ -188,7 +188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Bz-cc-3hQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2494" y="108"/>
+            <point key="canvasLocation" x="2388" y="117"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4mu-GN-irK">

@@ -19,14 +19,12 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     
     func setupViews() {
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        let bannerImageView = UIImageView(image: #imageLiteral(resourceName: "banner"))
-        bannerImageView.contentMode = .scaleAspectFill
-        navigationItem.titleView = bannerImageView
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.blue]
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.shadowImage = UIImage()
         
-        let widthConstraint = bannerImageView.widthAnchor.constraint(equalToConstant: view.frame.width)
-        let heightConstraint = bannerImageView.heightAnchor.constraint(equalToConstant: 70)
-        widthConstraint.isActive = true
-        heightConstraint.isActive = true
+        
+      
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
