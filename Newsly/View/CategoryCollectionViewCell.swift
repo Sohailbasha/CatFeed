@@ -30,6 +30,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    
     func setupSubViews() {
         self.layer.shadowColor = UIColor.black.cgColor
         self.layer.shadowOffset = CGSize(width: 0, height: 4.0)

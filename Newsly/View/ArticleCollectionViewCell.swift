@@ -11,6 +11,7 @@ import CoreMotion
 
 class ArticleCollectionViewCell: UICollectionViewCell {
 
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         self.articleImageView.image = nil
@@ -23,6 +24,9 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         self.articleImageView.contentMode = .scaleAspectFill
         self.articleImageView.layer.cornerRadius = 15
         self.articleImageView.clipsToBounds = true
+        
+        self.shadowView.frame = articleImageView.frame
+        self.insertSubview(shadowView, belowSubview: articleImageView)
 
     }
     
@@ -48,6 +52,16 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var sourceLabel: UILabel!
     
+    
+    let shadowView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 20
+        view.layer.shadowColor = UIColor.black.cgColor
+        view.layer.shadowOffset = CGSize(width: 0, height: 10.0)
+        view.layer.masksToBounds = false
+        view.layer.rasterizationScale = UIScreen.main.scale
+        return view
+    }()
     
     private func displayCellWith(article: Article?) {
         if let article = article {

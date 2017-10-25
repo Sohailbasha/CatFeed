@@ -18,9 +18,11 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     @IBOutlet var collectionView: UICollectionView!
     
     func setupViews() {
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.blue]
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        let color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        navigationController?.navigationBar.barTintColor = color
+        
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
         
         
