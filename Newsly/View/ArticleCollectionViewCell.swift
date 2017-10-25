@@ -27,7 +27,7 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         self.articleImageView.contentMode = .scaleAspectFill
         self.articleImageView.layer.cornerRadius = 14
         self.articleImageView.clipsToBounds = true
-//        setupImageSize()
+        setupImageSize()
     }
     
     
@@ -36,8 +36,6 @@ class ArticleCollectionViewCell: UICollectionViewCell {
             let widthRatio = articleImageView.bounds.size.width / image.size.width
             let heightRatio = articleImageView.bounds.size.height / image.size.height
             
-//            let widthRatio = self.bounds.size.width / image.size.width
-//            let heightRatio = self.bounds.size.height / image.size.height
             
             let scale = min(widthRatio, heightRatio)
             DispatchQueue.main.async {
