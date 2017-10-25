@@ -19,15 +19,20 @@ struct Article {
     let title: String
     let imageURL: String
     let toURL: String
+    let source: String
     
     init?(dictionary: [String:Any]) {
         guard let title = dictionary[titleKey] as? String,
             let imageURL = dictionary[imageURLKey] as? String,
             let toURL = dictionary[toURLKey] as? String else { return nil }
         
+        guard let sourceDictionary = dictionary["source"] as? [String:Any],
+            let source = sourceDictionary[sourceNameKey] as? String else { return nil }
+        
         self.title = title
         self.imageURL = imageURL
         self.toURL = toURL
+        self.source = source
     }
     
 

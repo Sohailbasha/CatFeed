@@ -46,46 +46,6 @@ class ArticleController {
                                             completion(articles)
         }
     }
-    
-    /*
-    func fetchFrom(category: CategoryType, completion: @escaping ([Article]?, [UIImage]?) -> Void) {
-        guard let url = baseURL else { return }
-        let urlParameters = ["apiKey":apiKey, "language":language, "category":category.rawValue]
-        
-        NetworkController.performRequest(for: url,
-                                         httpMethod: .get,
-                                         urlParameters: urlParameters,
-                                         body: nil) { (data, error) in
-                                            
-                                            
-                                            guard let data = data,
-                                                let responseString = String(data: data, encoding: .utf8) else {
-                                                    print("No data returned from request")
-                                                    completion([], [])
-                                                    return
-                                            }
-                                            
-                                            guard let jsonDictionary = (try? JSONSerialization.jsonObject(with: data, options: .allowFragments)) as? [String:Any],
-                                                let articleDicitonary = jsonDictionary["articles"] as? [[String:Any]] else {
-                                                    print("unable to serialize json. \nresponse: \(responseString)")
-                                                    return
-                                            }
-                                            
-                                            let articles = articleDicitonary.flatMap {Article(dictionary:$0)}
-                                            var images: [UIImage] = []
-                                            
-                                            for article in articles {
-                                                NetworkController.imageForURL(string: article.imageURL, completion: { (image) in
-                                                    if let image = image {
-                                                        images.append(image)
-                                                    }
-                                                })
-                                            }
-                                            
-                                            completion(articles, images)
-        }
-    }
-    */
 }
 
 

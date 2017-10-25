@@ -74,7 +74,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Avk-t6-uUH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="398" y="109"/>
+            <point key="canvasLocation" x="681" y="118"/>
         </scene>
         <!--List View Controller-->
         <scene sceneID="nVl-c0-qPN">
@@ -87,26 +87,30 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aT0-fh-o18">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="55" minimumInteritemSpacing="10" id="b2i-wG-C4V">
-                                    <size key="itemSize" width="315" height="344"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="10" id="b2i-wG-C4V">
+                                    <size key="itemSize" width="315" height="370"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="50" height="50"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="articleCell" id="sqh-7x-CDU" customClass="ArticleCollectionViewCell" customModule="Newsly" customModuleProvider="target">
-                                        <rect key="frame" x="30" y="0.0" width="315" height="344"/>
+                                        <rect key="frame" x="30" y="0.0" width="315" height="370"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="315" height="344"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="315" height="370"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n4Q-om-XJb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="315" height="344"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="315" height="285"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="315" id="u7y-R2-gBn"/>
+                                                        <constraint firstAttribute="height" constant="285" id="uuZ-wc-zjn"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="186-ys-Pd7">
-                                                    <rect key="frame" x="17" y="293" width="281" height="9"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <rect key="frame" x="0.0" y="283" width="315" height="63"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -114,20 +118,21 @@
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="n4Q-om-XJb" firstAttribute="leading" secondItem="sqh-7x-CDU" secondAttribute="leading" id="XLD-Pk-Qta"/>
-                                            <constraint firstItem="n4Q-om-XJb" firstAttribute="top" secondItem="sqh-7x-CDU" secondAttribute="top" id="fzS-YI-Htd"/>
-                                            <constraint firstAttribute="bottom" secondItem="n4Q-om-XJb" secondAttribute="bottom" id="mxE-F6-PbN"/>
-                                            <constraint firstAttribute="trailing" secondItem="n4Q-om-XJb" secondAttribute="trailing" id="ykX-dU-Igk"/>
+                                            <constraint firstItem="n4Q-om-XJb" firstAttribute="leading" secondItem="sqh-7x-CDU" secondAttribute="leading" id="41F-Ru-GT4"/>
+                                            <constraint firstAttribute="trailing" secondItem="n4Q-om-XJb" secondAttribute="trailing" id="5vM-sq-Myu"/>
+                                            <constraint firstItem="n4Q-om-XJb" firstAttribute="top" secondItem="sqh-7x-CDU" secondAttribute="top" id="X1V-pQ-z1v"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="articleImageView" destination="n4Q-om-XJb" id="eCU-2o-2FL"/>
+                                            <outlet property="imageViewHeightConstraint" destination="uuZ-wc-zjn" id="5zd-iN-OKG"/>
+                                            <outlet property="imageViewWidthConstraint" destination="u7y-R2-gBn" id="OY6-jH-cS0"/>
                                             <outlet property="titleLabel" destination="186-ys-Pd7" id="IgE-6h-Qtx"/>
                                             <segue destination="lEa-pD-dyc" kind="show" identifier="toWebView" id="XnA-xd-Cuy"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="LoadingFooterView" id="ago-F8-QbB" customClass="LoadingFooterView" customModule="Newsly" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="344" width="375" height="50"/>
+                                    <rect key="frame" x="0.0" y="370" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="mD2-eX-pOB">
@@ -160,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NWS-q5-Nu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1352.8" y="108.39580209895054"/>
+            <point key="canvasLocation" x="1541.5999999999999" y="108.39580209895054"/>
         </scene>
         <!--Web Kit View Controller-->
         <scene sceneID="BmE-pe-3LS">

@@ -88,7 +88,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleCell", for: indexPath) as? ArticleCollectionViewCell
         let article = articles[indexPath.row]
 
-        cell?.articleImageView.downloadedFrom(link: article.imageURL, contentMode: .scaleAspectFill)
+        cell?.articleImageView.downloadedFrom(link: article.imageURL)
         cell?.titleLabel.text = article.title
         
         return cell ?? UICollectionViewCell()
@@ -102,46 +102,13 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return footerView ?? UICollectionReusableView()
     }
     
-    
-    /*
-     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-     let numberOfArticles = articles.count
-     guard let activityIndicatorFooter = self.footerView else {
-     return
-     }
-     
-     if activityIndicatorFooter.activityIndicator.isAnimating {
-     return
-     }
-     
-     if (indexPath.row == numberOfArticles - 1 && numberOfArticles >= batchSize && indexPath.row < numberOfArticlesPerScreenLimit) {
-     
-     activityIndicatorFooter.activityIndicator.startAnimating()
-     } else {
-     activityIndicatorFooter.activityIndicator.stopAnimating()
-     }
-     
-     }
-     */
-    
-    
-    
 }
-
-extension ListViewController: UICollectionViewDataSourcePrefetching {
-    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        
-    }
-}
-
-
-
 
 extension ListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if UIDevice.current.userInterfaceIdiom == .phone {
-            return CGSize(width: collectionView.bounds.width - 75, height: 400)
+            return CGSize(width: collectionView.bounds.width - 45, height: 400)
         } else {
             // TO DO iPAD
             return CGSize()
@@ -149,14 +116,19 @@ extension ListViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(20, 0, 20, 0)
+        return UIEdgeInsetsMake(20, 10, 20, 10)
     }
-    
-    
     
 }
 
-
+extension ListViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        for indexPath in indexPaths {
+//            let cell = collectionView.cellForItem(at: indexPath) as? ArticleCollectionViewCell
+//            cell?.articleImageView.downloadedFrom(link: articles[indexPath.row].imageURL)
+        }
+    }
+}
 
 
 
