@@ -15,11 +15,15 @@ class CategoryController {
     var categoryCards: [Category] = []
 
     init() {
-        let cardEverything = Category(category: .general, art: #imageLiteral(resourceName: "everything"))
+
+        let cardEntertainment = Category(category: .entertainment, art: #imageLiteral(resourceName: "entertainment"))
         let cardBusiness = Category(category: .business, art: #imageLiteral(resourceName: "business"))
-        let cardPolitics = Category(category: .politics, art: #imageLiteral(resourceName: "politics"))
-        let cardNerdStuff = Category(category: .technology, art: #imageLiteral(resourceName: "tech"))
-        categoryCards = [cardEverything, cardBusiness, cardPolitics, cardNerdStuff]
+        let cardTechnology = Category(category: .technology, art: #imageLiteral(resourceName: "tech"))
+        let cardGaming = Category(category: .gaming, art: #imageLiteral(resourceName: "gaming"))
+        let cardScience = Category(category: .science, art: #imageLiteral(resourceName: "science"))
+        let cardSports = Category(category: .sports, art: #imageLiteral(resourceName: "sports"))
+        
+        categoryCards = [cardEntertainment, cardBusiness, cardTechnology, cardGaming, cardScience, cardSports]
     }
     
     

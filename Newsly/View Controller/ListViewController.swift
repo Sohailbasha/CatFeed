@@ -108,7 +108,7 @@ extension ListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         if UIDevice.current.userInterfaceIdiom == .phone {
-            return CGSize(width: collectionView.bounds.width - 45, height: 400)
+            return CGSize(width: collectionView.bounds.width - 50, height: 400)
         } else {
             // TO DO iPAD
             return CGSize()
@@ -118,6 +118,7 @@ extension ListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsetsMake(20, 10, 20, 10)
     }
+    
     
 }
 

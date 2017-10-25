@@ -24,20 +24,20 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // add things that you see on the screen
-        self.articleImageView.contentMode = .scaleAspectFit
+        self.articleImageView.contentMode = .scaleAspectFill
         self.articleImageView.layer.cornerRadius = 14
         self.articleImageView.clipsToBounds = true
-        setupImageSize()
+//        setupImageSize()
     }
     
     
     func setupImageSize() {
         if let image = articleImageView.image {
-//            let widthRatio = articleImageView.bounds.size.width / image.size.width
-//            let heightRatio = articleImageView.bounds.size.height / image.size.height
+            let widthRatio = articleImageView.bounds.size.width / image.size.width
+            let heightRatio = articleImageView.bounds.size.height / image.size.height
             
-            let widthRatio = self.bounds.size.width / image.size.width
-            let heightRatio = self.bounds.size.height / image.size.height
+//            let widthRatio = self.bounds.size.width / image.size.width
+//            let heightRatio = self.bounds.size.height / image.size.height
             
             let scale = min(widthRatio, heightRatio)
             DispatchQueue.main.async {

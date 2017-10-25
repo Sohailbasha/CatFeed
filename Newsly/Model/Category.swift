@@ -20,11 +20,12 @@ class Category {
 }
 
 enum CategoryType: String {
-    case general = "general"
+
     case technology = "technology"
     case gaming = "gaming"
-    case politics = "politics"
+    case entertainment = "entertainment"
     case business = "business"
     case science = "science-and-nature"
     case sports = "sport"
+    
 }
