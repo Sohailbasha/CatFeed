@@ -18,15 +18,9 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
     @IBOutlet var collectionView: UICollectionView!
     
     func setupViews() {
-        let color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
-        navigationController?.navigationBar.barTintColor = color
-        
-//        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.barTintColor = UIColor.black
         navigationController?.navigationBar.shadowImage = UIImage()
-        
-        
-      
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -39,10 +33,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
         return cell ?? UICollectionViewCell()
     }
     
-
-    
     // MARK: - Navigation
-
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showArticles" {
             if let destinationVC = segue.destination as? ListViewController {
@@ -55,10 +46,6 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
             }
         }
     }
-    
-
-    
-
 }
 
 
