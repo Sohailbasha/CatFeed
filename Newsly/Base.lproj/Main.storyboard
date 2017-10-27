@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -203,11 +204,28 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="ChO-ml-2Hr"/>
                     </view>
-                    <navigationItem key="navigationItem" id="LIH-AJ-KmQ"/>
+                    <navigationItem key="navigationItem" id="LIH-AJ-KmQ">
+                        <rightBarButtonItems>
+                            <barButtonItem title=" Forward &gt;" id="VfG-6S-eqp">
+                                <connections>
+                                    <action selector="forward:" destination="lEa-pD-dyc" id="lIK-zJ-vOV"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="&lt; Back " id="XjP-PE-K2B">
+                                <connections>
+                                    <action selector="back:" destination="lEa-pD-dyc" id="2qc-EW-jzt"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backButton" destination="XjP-PE-K2B" id="Pin-6E-C3h"/>
+                        <outlet property="forwardButton" destination="VfG-6S-eqp" id="HPy-D1-nZP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Bz-cc-3hQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2279" y="116"/>
+            <point key="canvasLocation" x="1898" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4mu-GN-irK">

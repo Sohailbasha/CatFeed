@@ -12,10 +12,22 @@ import WebKit
 class WebKitViewController: UIViewController, WKUIDelegate {
     
     var webView: WKWebView!
+    @IBOutlet var forwardButton: UIBarButtonItem!
+    @IBOutlet var backButton: UIBarButtonItem!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        backButton.isEnabled = false
+        forwardButton.isEnabled = false
+        webView.addObserver(self, forKeyPath: "loading", options: .new, context: nil)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if (keyPath == "loading") {
+            backButton.isEnabled = webView.canGoBack
+            forwardButton.isEnabled = webView.canGoForward
+        }
     }
     
     func loadWebView(url: String) {
@@ -24,10 +36,20 @@ class WebKitViewController: UIViewController, WKUIDelegate {
         webView.uiDelegate = self
         view = webView
         
+        
         if let url = URL(string: url), isViewLoaded {
             let urlRequest = URLRequest(url: url)
             webView.load(urlRequest)
         }
+    }
+    
+    
+    @IBAction func back(_ sender: Any) {
+        webView.goBack()
+    }
+    
+    @IBAction func forward(_ sender: Any) {
+        webView.goForward()
     }
     
 }

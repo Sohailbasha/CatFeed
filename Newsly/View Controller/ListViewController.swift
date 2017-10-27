@@ -120,7 +120,6 @@ extension ListViewController: UICollectionViewDelegateFlowLayout {
         return UIEdgeInsetsMake(20, 10, 20, 10)
     }
     
-    
 }
 
 extension ListViewController: UICollectionViewDataSourcePrefetching {
