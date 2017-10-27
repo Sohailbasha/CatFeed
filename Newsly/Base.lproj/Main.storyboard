@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="63J-NP-is6">
-                                <rect key="frame" x="0.0" y="145.5" width="375" height="502"/>
+                                <rect key="frame" x="0.0" y="145.5" width="375" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="30" minimumInteritemSpacing="10" id="pdV-2X-dZF">
                                     <size key="itemSize" width="262" height="320"/>
@@ -30,7 +30,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="categoryCell" id="jw5-hG-TKU" customClass="CategoryCollectionViewCell" customModule="Newsly" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="91" width="262" height="320"/>
+                                        <rect key="frame" x="20" y="85.5" width="262" height="320"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="262" height="320"/>
@@ -59,7 +59,7 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by News API" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flQ-1c-olh">
-                                <rect key="frame" x="0.0" y="647.5" width="375" height="19.5"/>
+                                <rect key="frame" x="0.0" y="637.5" width="375" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                 <color key="textColor" red="0.36239904165267944" green="0.77897554636001587" blue="0.69818371534347534" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -78,7 +78,7 @@
                             <constraint firstItem="kg9-Vu-ZAE" firstAttribute="trailing" secondItem="63J-NP-is6" secondAttribute="trailing" id="BJ2-Mh-1IQ"/>
                             <constraint firstItem="flQ-1c-olh" firstAttribute="leading" secondItem="kg9-Vu-ZAE" secondAttribute="leading" id="DH5-Xh-Ma7"/>
                             <constraint firstItem="g0M-MB-SEW" firstAttribute="top" secondItem="kg9-Vu-ZAE" secondAttribute="top" constant="10" id="QLx-Es-Zqg"/>
-                            <constraint firstItem="flQ-1c-olh" firstAttribute="bottom" secondItem="kg9-Vu-ZAE" secondAttribute="bottom" id="QMz-kc-od2"/>
+                            <constraint firstItem="kg9-Vu-ZAE" firstAttribute="bottom" secondItem="flQ-1c-olh" secondAttribute="bottom" constant="10" id="QMz-kc-od2"/>
                             <constraint firstItem="63J-NP-is6" firstAttribute="leading" secondItem="kg9-Vu-ZAE" secondAttribute="leading" id="To3-9N-tRx"/>
                             <constraint firstItem="kg9-Vu-ZAE" firstAttribute="trailing" secondItem="g0M-MB-SEW" secondAttribute="trailing" id="X5J-nd-CuM"/>
                             <constraint firstItem="flQ-1c-olh" firstAttribute="top" secondItem="63J-NP-is6" secondAttribute="bottom" id="u3n-6O-ZCx"/>
