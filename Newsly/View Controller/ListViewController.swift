@@ -48,7 +48,7 @@ class ListViewController: UIViewController, ArticleDisplayList, UIViewController
     
     // Functions
     
-    func setupDetailView(with id: CategoryType) {
+    func setupDetailView(with id: Sources) {
         ArticleController.shared.fetchArticlesFor(category: id) { (articles) -> Void in
             if let fetchedArticles = articles {
                 self.articles = fetchedArticles

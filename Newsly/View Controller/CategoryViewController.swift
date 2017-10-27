@@ -40,7 +40,7 @@ class CategoryViewController: UIViewController, UICollectionViewDataSource, UICo
             if let destinationVC = segue.destination as? ListViewController {
                 if let cell = sender as? CategoryCollectionViewCell {
                     if let indexPath = collectionView.indexPath(for: cell) {
-                        let id = CategoryController.shared.categoryCards[indexPath.row].category
+                        let id = CategoryController.shared.categoryCards[indexPath.row].sourceFeed
                         destinationVC.setupDetailView(with: id)
                     }
                 }

@@ -16,14 +16,16 @@ class CategoryController {
 
     init() {
 
-        let cardEntertainment = Category(category: .entertainment, art: #imageLiteral(resourceName: "entertainment"))
-        let cardBusiness = Category(category: .business, art: #imageLiteral(resourceName: "business"))
-        let cardTechnology = Category(category: .technology, art: #imageLiteral(resourceName: "tech"))
-        let cardGaming = Category(category: .gaming, art: #imageLiteral(resourceName: "gaming"))
-        let cardScience = Category(category: .science, art: #imageLiteral(resourceName: "science"))
-        let cardSports = Category(category: .sports, art: #imageLiteral(resourceName: "sports"))
+        let cardEntertainment = Category(sourceFeed: .popCulture, art: #imageLiteral(resourceName: "entertainment"))
+        let cardBusiness = Category(sourceFeed: .business, art: #imageLiteral(resourceName: "business"))
+        let cardTechnology = Category(sourceFeed: .tech, art: #imageLiteral(resourceName: "tech"))
+        let cardGaming = Category(sourceFeed: .gaming, art: #imageLiteral(resourceName: "gaming"))
+        let cardScience = Category(sourceFeed: .science, art: #imageLiteral(resourceName: "science"))
+        let cardSports = Category(sourceFeed: .sports, art: #imageLiteral(resourceName: "sports"))
+        let cardInternational = Category(sourceFeed: .international, art: #imageLiteral(resourceName: "international"))
+        let cardReputed = Category(sourceFeed: .reputedSources, art: #imageLiteral(resourceName: "reputed"))
         
-        categoryCards = [cardEntertainment, cardBusiness, cardTechnology, cardGaming, cardScience, cardSports]
+        categoryCards = [cardReputed, cardTechnology, cardEntertainment, cardBusiness, cardInternational, cardGaming, cardScience, cardSports]
     }
     
     

@@ -16,12 +16,13 @@ class ArticleController {
     
     private let apiKey = "1fb14fda4d59496c8d0678093e9dbc02"
     let baseURL = URL(string: "http://beta.newsapi.org/v2/top-headlines")
-    private let language = "en"
     
     
-    func fetchArticlesFor(category: CategoryType, completion: @escaping ([Article]?) -> Void) {
+    
+    
+    func fetchArticlesFor(category: Sources, completion: @escaping ([Article]?) -> Void) {
         guard let url = baseURL else { return }
-        let urlParameters = ["apiKey":apiKey, "language":language, "category":category.rawValue]
+        let urlParameters = ["apiKey":apiKey, "sources":category.rawValue]
         
         NetworkController.performRequest(for: url,
                                          httpMethod: .get,
