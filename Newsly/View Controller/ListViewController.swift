@@ -22,7 +22,21 @@ protocol ArticleDisplayList {
     
 }
 
-class ListViewController: UIViewController, ArticleDisplayList {
+class ListViewController: UIViewController, ArticleDisplayList, UIViewControllerTransitioningDelegate {
+    
+    // Mark: - Properties
+    
+    var categoryID: String?
+    
+    var articles: [Article] = []
+    
+    var offset: Int = 0
+    var batchSize: Int = 6
+    var numberOfArticlesPerScreenLimit = 1000
+    
+    var footerView: LoadingFooterView?
+    
+    @IBOutlet var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,29 +61,17 @@ class ListViewController: UIViewController, ArticleDisplayList {
     }
     
     func showWebsite(for url: URL) {
-        
-        let safariViewController = SFSafariViewController(url: url)
+        let configuration = SFSafariViewController.Configuration()
+        configuration.entersReaderIfAvailable = true
+        let safariViewController = SFSafariViewController(url: url, configuration: configuration)
         safariViewController.preferredBarTintColor = .black
         safariViewController.preferredControlTintColor = .white
-        self.present(safariViewController, animated: true, completion: nil)
+        safariViewController.dismissButtonStyle = .close
         
+        safariViewController.transitioningDelegate = self
+        
+        self.present(safariViewController, animated: true, completion: nil)
     }
-    
-    
-    // Mark: - Properties
-    
-    var categoryID: String?
-    
-    var articles: [Article] = []
-    
-    var offset: Int = 0
-    var batchSize: Int = 6
-    var numberOfArticlesPerScreenLimit = 1000
-    
- 
-    var footerView: LoadingFooterView?
-    
-    @IBOutlet var collectionView: UICollectionView!
     
 }
 

@@ -9,14 +9,15 @@
 import UIKit
 
 class CategoryViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+ 
+    @IBOutlet var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
     }
 
-    @IBOutlet var collectionView: UICollectionView!
-    
+
     func setupViews() {
         navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         navigationController?.navigationBar.barTintColor = UIColor.black
