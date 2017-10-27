@@ -10,9 +10,8 @@ import Foundation
 import UIKit
 
 class Category {
-//    let category: CategoryType
+
     let art: UIImage
-    
     let sourceFeed: Sources
     
     init(sourceFeed: Sources, art: UIImage) {
@@ -21,14 +20,7 @@ class Category {
     }
 }
 
-enum CategoryType: String {
-    case technology = "technology"
-    case gaming = "gaming"
-    case entertainment = "entertainment"
-    case business = "business"
-    case science = "science-and-nature"
-    case sports = "sport"
-}
+
 
 enum Sources: String {
     case tech = "the-next-web,the-verge,engadget,crypto-coins-news,wired"

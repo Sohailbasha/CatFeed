@@ -20,39 +20,25 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        
         // add things that you see on the screen
         self.articleImageView.contentMode = .scaleAspectFill
         self.articleImageView.layer.cornerRadius = 15
         self.articleImageView.clipsToBounds = true
         
-        self.shadowView.frame = articleImageView.frame
-        self.insertSubview(shadowView, belowSubview: articleImageView)
+    }
+    
 
-    }
-    
-    /*
-    func setupImageSize() {
-        if let image = articleImageView.image {
-            let widthRatio = articleImageView.bounds.size.width / image.size.width
-            let heightRatio = articleImageView.bounds.size.height / image.size.height
-            
-            
-            let scale = min(widthRatio, heightRatio)
-            DispatchQueue.main.async {
-                self.imageViewHeightConstraint.constant = scale * image.size.height
-                self.imageViewWidthConstraint.constant = scale * image.size.width
-            }
-        }
-    }
-    */
-    
-    
     
     @IBOutlet var articleImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var sourceLabel: UILabel!
     
+    private var longPressGestureRecognizer: UILongPressGestureRecognizer? = nil
     
+    private var isPressed: Bool = false
+
     let shadowView: UIView = {
         let view = UIView()
         view.layer.cornerRadius = 20
@@ -73,6 +59,52 @@ class ArticleCollectionViewCell: UICollectionViewCell {
             backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
             titleLabel.alpha = 0
             articleImageView.alpha = 0
+        }
+    }
+    
+    
+    private func configureGestureRecognizer() {
+        longPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture(gestureRecognizer:)))
+        longPressGestureRecognizer?.minimumPressDuration = 0.1
+        addGestureRecognizer(longPressGestureRecognizer!)
+    }
+    
+    @objc internal func handleLongPressGesture(gestureRecognizer: UILongPressGestureRecognizer) {
+        if gestureRecognizer.state == .began {
+            handleLongPressBegan()
+        } else if gestureRecognizer.state == .ended || gestureRecognizer.state == .cancelled {
+            handleLongPressEnded()
+        }
+    }
+    
+    private func handleLongPressBegan() {
+        guard !isPressed else {
+            return
+        }
+        isPressed = true
+        UIView.animate(withDuration: 0.3,
+                       delay: 0.0,
+                       usingSpringWithDamping: 0.8,
+                       initialSpringVelocity: 0.8,
+                       options: .beginFromCurrentState,
+                       animations: {
+                        self.transform = CGAffineTransform(scaleX: 0.95, y: 0.95)
+        }, completion: nil)
+    }
+    
+    private func handleLongPressEnded() {
+        guard isPressed else {
+            return
+        }
+        UIView.animate(withDuration: 0.3,
+                       delay: 0.0,
+                       usingSpringWithDamping: 0.8,
+                       initialSpringVelocity: 0.8,
+                       options: .beginFromCurrentState,
+                       animations: {
+            self.transform = CGAffineTransform.identity
+        }) { (_) in
+            self.isPressed = false
         }
     }
 }
