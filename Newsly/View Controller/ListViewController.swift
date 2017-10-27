@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class LoadingFooterView: UICollectionReusableView {
     static let reuseID = "LoadingFooterView"
@@ -45,22 +46,15 @@ class ListViewController: UIViewController, ArticleDisplayList {
         }
     }
     
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toWebView" {
-            if let cell = sender as? ArticleCollectionViewCell {
-                if let indexPath = collectionView.indexPath(for: cell) {
-                    if let destinationVC = segue.destination as? WebKitViewController {
-                        let articleURL = articles[indexPath.row].toURL
-                        DispatchQueue.main.async {
-                            destinationVC.loadWebView(url: articleURL)
-                        }
-                    }
-                }
-            }
-        }
+    func showWebsite(for url: URL) {
+        
+        let safariViewController = SFSafariViewController(url: url)
+        safariViewController.preferredBarTintColor = .black
+        safariViewController.preferredControlTintColor = .white
+        self.present(safariViewController, animated: true, completion: nil)
+        
     }
-    */
+    
     
     // Mark: - Properties
     
@@ -139,14 +133,8 @@ extension ListViewController: UICollectionViewDataSourcePrefetching {
     }
 }
 
-import SafariServices
 extension ListViewController {
-    func showWebsite(for url: URL) {
-        let safariViewController = SFSafariViewController(url: url)
-        safariViewController.preferredBarTintColor = .black
-        safariViewController.preferredControlTintColor = .white
-        self.present(safariViewController, animated: true, completion: nil)
-    }
+ 
 }
 
 
