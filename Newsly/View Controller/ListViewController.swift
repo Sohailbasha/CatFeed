@@ -45,6 +45,7 @@ class ListViewController: UIViewController, ArticleDisplayList {
         }
     }
     
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toWebView" {
             if let cell = sender as? ArticleCollectionViewCell {
@@ -59,7 +60,7 @@ class ListViewController: UIViewController, ArticleDisplayList {
             }
         }
     }
-    
+    */
     
     // Mark: - Properties
     
@@ -95,6 +96,12 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell ?? UICollectionViewCell()
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let url = URL(string: articles[indexPath.row].toURL) {
+            self.showWebsite(for: url)
+        }
+    }
+    
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: LoadingFooterView.reuseID, for: indexPath) as? LoadingFooterView
         footerView?.activityIndicator.startAnimating()
@@ -102,6 +109,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         self.footerView = footerView
         return footerView ?? UICollectionReusableView()
     }
+    
     
 }
 
@@ -131,8 +139,15 @@ extension ListViewController: UICollectionViewDataSourcePrefetching {
     }
 }
 
-
-
+import SafariServices
+extension ListViewController {
+    func showWebsite(for url: URL) {
+        let safariViewController = SFSafariViewController(url: url)
+        safariViewController.preferredBarTintColor = .black
+        safariViewController.preferredControlTintColor = .white
+        self.present(safariViewController, animated: true, completion: nil)
+    }
+}
 
 
 

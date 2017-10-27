@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FD6D672A1F9E3AA900144A92 /* ArticleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D67291F9E3AA900144A92 /* ArticleCollectionViewCell.swift */; };
-		FD6D672C1F9E6C1A00144A92 /* WebKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D672B1F9E6C1A00144A92 /* WebKitViewController.swift */; };
 		FD6D67311F9EC48100144A92 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6D67301F9EC48100144A92 /* Extensions.swift */; };
 		FDCA8DDE1F993802000C684F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCA8DDD1F993802000C684F /* AppDelegate.swift */; };
 		FDCA8DE31F993802000C684F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDCA8DE11F993802000C684F /* Main.storyboard */; };
@@ -26,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		FD6D67291F9E3AA900144A92 /* ArticleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCollectionViewCell.swift; sourceTree = "<group>"; };
-		FD6D672B1F9E6C1A00144A92 /* WebKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKitViewController.swift; sourceTree = "<group>"; };
 		FD6D67301F9EC48100144A92 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FDCA8DDA1F993802000C684F /* Newsly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Newsly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDCA8DDD1F993802000C684F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,7 +135,6 @@
 			children = (
 				FDCA8DEF1F99383C000C684F /* CategoryViewController.swift */,
 				FDE80EAD1F9A735F0062038E /* ListViewController.swift */,
-				FD6D672B1F9E6C1A00144A92 /* WebKitViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -219,7 +216,6 @@
 				FDCA8DF01F99383C000C684F /* CategoryViewController.swift in Sources */,
 				FDCA8E021F998365000C684F /* CategoryController.swift in Sources */,
 				FDCA8DF21F9952EE000C684F /* CategoryCollectionViewCell.swift in Sources */,
-				FD6D672C1F9E6C1A00144A92 /* WebKitViewController.swift in Sources */,
 				FDE80EAE1F9A735F0062038E /* ListViewController.swift in Sources */,
 				FD6D67311F9EC48100144A92 /* Extensions.swift in Sources */,
 				FDCA8DFC1F99811B000C684F /* Category.swift in Sources */,

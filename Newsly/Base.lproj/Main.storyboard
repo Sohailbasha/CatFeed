@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13526"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -153,7 +152,6 @@
                                             <outlet property="articleImageView" destination="n4Q-om-XJb" id="eCU-2o-2FL"/>
                                             <outlet property="sourceLabel" destination="Y57-rI-N1c" id="ZBR-ek-4eu"/>
                                             <outlet property="titleLabel" destination="186-ys-Pd7" id="IgE-6h-Qtx"/>
-                                            <segue destination="lEa-pD-dyc" kind="show" identifier="toWebView" id="otu-85-lsH"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -193,39 +191,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NWS-q5-Nu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1151" y="116"/>
-        </scene>
-        <!--Web Kit View Controller-->
-        <scene sceneID="BmE-pe-3LS">
-            <objects>
-                <viewController id="lEa-pD-dyc" customClass="WebKitViewController" customModule="Newsly" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="AqM-SI-aP7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="ChO-ml-2Hr"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="LIH-AJ-KmQ">
-                        <rightBarButtonItems>
-                            <barButtonItem title=" Forward &gt;" id="VfG-6S-eqp">
-                                <connections>
-                                    <action selector="forward:" destination="lEa-pD-dyc" id="lIK-zJ-vOV"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem title="&lt; Back " id="XjP-PE-K2B">
-                                <connections>
-                                    <action selector="back:" destination="lEa-pD-dyc" id="2qc-EW-jzt"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="backButton" destination="XjP-PE-K2B" id="Pin-6E-C3h"/>
-                        <outlet property="forwardButton" destination="VfG-6S-eqp" id="HPy-D1-nZP"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Bz-cc-3hQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1898" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4mu-GN-irK">
