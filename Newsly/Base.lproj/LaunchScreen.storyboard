@@ -18,25 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CATFEED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge8-7O-BQk">
-                                <rect key="frame" x="108.5" y="312.5" width="158.5" height="42"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="35"/>
-                                <color key="textColor" red="0.13188965499999999" green="0.39954750039999998" blue="0.92444438289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News, Catagorized" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFC-O8-tgF">
-                                <rect key="frame" x="116" y="362" width="143" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="trH-H6-Nir">
+                                <rect key="frame" x="108.5" y="247.5" width="158.5" height="172.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="x8N-Se-8zk">
+                                        <rect key="frame" x="29.5" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="BEL-Uf-n46"/>
+                                            <constraint firstAttribute="height" constant="100" id="pR0-IQ-Bhx"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CATFEED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge8-7O-BQk">
+                                        <rect key="frame" x="0.0" y="105" width="158.5" height="42"/>
+                                        <fontDescription key="fontDescription" type="system" weight="black" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News, Catagorized" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFC-O8-tgF">
+                                        <rect key="frame" x="8" y="152" width="143" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="kFC-O8-tgF" firstAttribute="top" secondItem="Ge8-7O-BQk" secondAttribute="bottom" constant="7.5" id="1Ny-mY-ghe"/>
-                            <constraint firstItem="kFC-O8-tgF" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="B4A-5L-5jf"/>
-                            <constraint firstItem="Ge8-7O-BQk" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="dXD-i5-kIU"/>
-                            <constraint firstItem="Ge8-7O-BQk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="lGe-nF-2DF"/>
+                            <constraint firstItem="trH-H6-Nir" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Mbh-Ng-bNR"/>
+                            <constraint firstItem="trH-H6-Nir" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="qVP-Ev-MPa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -46,4 +56,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon" width="2016" height="2016"/>
+    </resources>
 </document>

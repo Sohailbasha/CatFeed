@@ -9,11 +9,6 @@
 import UIKit
 import SafariServices
 
-class LoadingFooterView: UICollectionReusableView {
-    static let reuseID = "LoadingFooterView"
-    @IBOutlet var activityIndicator: UIActivityIndicatorView!
-}
-
 
 protocol ArticleDisplayList {
     var articles: [Article] { get set }
@@ -34,7 +29,7 @@ class ListViewController: UIViewController, ArticleDisplayList, UIViewController
     var batchSize: Int = 6
     var numberOfArticlesPerScreenLimit = 1000
     
-    var footerView: LoadingFooterView?
+    
     
     @IBOutlet var collectionView: UICollectionView!
     
@@ -43,8 +38,9 @@ class ListViewController: UIViewController, ArticleDisplayList, UIViewController
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.prefetchDataSource = self
-        footerView?.activityIndicator.startAnimating()
     }
+    
+    
     
     // Functions
     
@@ -55,7 +51,6 @@ class ListViewController: UIViewController, ArticleDisplayList, UIViewController
             }
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
-                self.footerView?.activityIndicator.stopAnimating()
             }
         }
     }
@@ -67,9 +62,7 @@ class ListViewController: UIViewController, ArticleDisplayList, UIViewController
         safariViewController.preferredBarTintColor = .black
         safariViewController.preferredControlTintColor = .white
         safariViewController.dismissButtonStyle = .close
-        
         safariViewController.transitioningDelegate = self
-        
         self.present(safariViewController, animated: true, completion: nil)
     }
     
@@ -84,7 +77,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "articleCell", for: indexPath) as? ArticleCollectionViewCell
         let article = articles[indexPath.row]
-
+        
         cell?.articleImageView.downloadedFrom(link: article.imageURL)
         cell?.titleLabel.text = article.title
         cell?.sourceLabel.text = article.source
@@ -98,26 +91,12 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
     
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: LoadingFooterView.reuseID, for: indexPath) as? LoadingFooterView
-        footerView?.activityIndicator.startAnimating()
-        footerView?.activityIndicator.hidesWhenStopped = true
-        self.footerView = footerView
-        return footerView ?? UICollectionReusableView()
-    }
-    
-    
 }
 
 extension ListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            return CGSize(width: collectionView.bounds.width - 70, height: 460)
-        } else {
-            // TO DO iPAD
-            return CGSize()
-        }
+
+        return CGSize(width: collectionView.bounds.width - 70, height: 460)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -129,14 +108,14 @@ extension ListViewController: UICollectionViewDelegateFlowLayout {
 extension ListViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
         for indexPath in indexPaths {
-//            let cell = collectionView.cellForItem(at: indexPath) as? ArticleCollectionViewCell
-//            cell?.articleImageView.downloadedFrom(link: articles[indexPath.row].imageURL)
+            let cell = collectionView.cellForItem(at: indexPath) as? ArticleCollectionViewCell
+            cell?.articleImageView.downloadedFrom(link: articles[indexPath.row].imageURL)
         }
     }
 }
 
 extension ListViewController {
- 
+    
 }
 
 
