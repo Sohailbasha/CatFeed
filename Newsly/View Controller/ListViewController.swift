@@ -79,6 +79,7 @@ extension ListViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let article = articles[indexPath.row]
         
         cell?.articleImageView.downloadedFrom(link: article.imageURL)
+//        cell?.displayCellWith(article: articles[indexPath.row])
         cell?.titleLabel.text = article.title
         cell?.sourceLabel.text = article.source
         
@@ -107,10 +108,11 @@ extension ListViewController: UICollectionViewDelegateFlowLayout {
 
 extension ListViewController: UICollectionViewDataSourcePrefetching {
     func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-        for indexPath in indexPaths {
-            let cell = collectionView.cellForItem(at: indexPath) as? ArticleCollectionViewCell
-            cell?.articleImageView.downloadedFrom(link: articles[indexPath.row].imageURL)
-        }
+//        for indexPath in indexPaths {
+//            let cell = collectionView.cellForItem(at: indexPath) as? ArticleCollectionViewCell
+//            cell?.articleImageView.downloadedFrom(link: articles[indexPath.row].imageURL)
+//            cell?.displayCellWith(article: articles[indexPath.row])
+//        }
     }
 }
 

@@ -14,7 +14,6 @@ class ArticleCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         self.articleImageView.image = nil
-        
     }
     
     override func awakeFromNib() {
@@ -24,7 +23,6 @@ class ArticleCollectionViewCell: UICollectionViewCell {
         self.articleImageView.contentMode = .scaleAspectFill
         self.articleImageView.layer.cornerRadius = 15
         self.articleImageView.clipsToBounds = true
-        self.articleImageView.image = #imageLiteral(resourceName: "default")
     }
     
     
